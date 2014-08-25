@@ -252,7 +252,7 @@
 
 			// Some helper methods for getting the next/prev points
 			var hasValue = function(item){
-				return item.value !== null;
+				return item.hasValue();
 			},
 			nextPoint = function(point, collection, index){
 				return helpers.findNextWhere(collection, hasValue, index) || point;
