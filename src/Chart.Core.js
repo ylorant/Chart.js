@@ -870,8 +870,12 @@
 			ctx.font = font;
 			var longest = 0;
 			each(arrayOfStrings,function(string){
-				var textWidth = ctx.measureText(string).width;
-				longest = (textWidth > longest) ? textWidth : longest;
+                var splitted = string.split(delimiter);
+                for(var i in splitted)
+                {
+                    var textWidth = ctx.measureText(splitted[i]).width;
+                    longest = (textWidth > longest) ? textWidth : longest;
+                }
 			});
 			return longest;
 		},
